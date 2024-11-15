@@ -48,21 +48,17 @@ let song;
 let shapes = []; // Array de posicions de les formes
 let numShapes = 10; // Nombre de formes a dibuixar
 let selectedShape = 'heart'; // Forma per defecte
-
 function setup() {
   let canvas = createCanvas(600, 600);
   canvas.parent(document.body);
-
   amplitude = new p5.Amplitude();
   fft = new p5.FFT();
-
   // Inicialitzar les formes amb posicions aleatòries
   for (let i = 0; i < numShapes; i++) {
     let x = random(width);
     let y = random(height);
     shapes.push({x: x, y: y});
   }
-
   // Setup file input listener
   let fileInput = document.getElementById('audio-upload');
   fileInput.addEventListener('change', handleFileUpload);
